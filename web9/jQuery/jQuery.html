@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>练习jQuery</title>
+	</head>
+		<style type="text/css">
+			#id{
+				background-color: red;
+			}
+			
+			.show{
+				width: 300px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				border: 1px solid red;
+				margin: 0 auto 20px;
+			}
+			
+			.content{
+				width: 300px;
+				height: 200px;
+				line-height: 30px;
+				text-align: center;
+				border: 1px solid red;
+				margin: 0 auto 20px;
+				display: none;
+			}
+			
+			.hidden{
+				display: block;
+			}
+			
+			
+			ul,li{
+				list-style: none;
+			}
+			.nav-wp li{
+				float: left;
+				width: 50px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				margin: 10px;
+				border: 1px solid red;
+				cursor: pointer;
+			}
+			
+			.nav-wp li.on{
+				background-color: red;
+				color:#fff;
+			}
+		</style>
+	<body>
+		<ul id="nav" class="nav-wp">
+			<li class="on">intem1</li>
+			<li>intem2</li>
+			<li>intem3</li>
+			<li>intem4</li>
+			<li>intem5</li>
+		</ul>
+		
+		<div class="show">显示</div>
+		<div class="content">1:用来返回在匹配的元素集合中的每个元素上用来切换的样式类名的一个函数。接收元素的索引位置和元素旧的样式类作为参数。
+
+2: 一个用来判断样式类添加还是移除的 boolean 值。 
+
+</div>
+		<p >ggggggggggggggggg</p>
+		<h1 id="H" class="hhhhh">你好 Word</h1>
+		<div class="ddd">hahahaha.....</div>
+		<button  id="btn">点击</button>
+		<script src = "../lib/jquery-3.1.1.js"></script>
+		<script>
+		
+		$('#nav li').on('click',function(){
+			var $this = $(this);
+			$this.addClass('on').siblings().removeClass('on');
+		})
+			var $show = $('.show'),
+				$content = $('.content');
+			console.log($show[0])	
+			$show.on('click',function(){
+				
+				/*if($show[0].innerHTML=='显示'){
+					$show[0].innerHTML='隐藏'
+				}else{
+					$show[0].innerHTML='显示'
+				}*/
+				//将jQuery对象转换成dom对象来完成
+//				$content.toggleClass('hidden');
+//				if($content.hasClass('hidden')){
+//					$show[0].innerHTML='隐藏'
+//				}else{
+//					$show[0].innerHTML='显示'	
+//				};
+				
+				//使用jQuery对象来完成
+				$content.toggleClass('hidden');
+				if($content.hasClass('hidden')){
+					$show.html('隐藏');
+				}else{
+					$show.html('显示');	
+				}
+				
+			})
+			
+			
+		
+			$("p").addClass("selected1 selected2");
+			
+
+			$("img").each(function(i){
+			   this.src = "test" + i + ".jpg";
+			 });
+			var $H = $('#H');
+			
+			$H.attr('title','打你哦。。。。')
+			$('#btn').css('color','#FF0000')
+			
+		
+			$('.ddd').attr('title','mememe.....')
+			var $btn = $('#btn');
+			$btn.css('color','#FF0000');
+			var $btn = $('#btn')
+			$btn.on('click',function(){
+				alert(1111)
+			})
+			
+			console.log($H.attr('class'))
+			
+			//var btn = document.getElementById('btn')
+			/*var btn = $('#btn')
+			
+				//btn[0].style.color = 'red';
+			
+			console.log(btn)*/
+
+		</script>
+	</body>
+</html>

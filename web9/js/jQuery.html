@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jq练习</title>
+		<style>
+			.spe{
+				width: 200px;
+				height: 100px;
+				background-color: red;
+				
+				/*margin: 40px auto;*/
+			
+			}
+		</style>
+	</head>
+	<body>
+		<button class="btn">点我</button>
+		<div class="spe"></div>
+		
+		
+		<script src="../lib/jquery-3.1.1.js"></script>
+		<script>
+			$('.btn').on('click',function(){
+				var pas = {
+					'margin-left':'500px',
+					'width':'50px',
+					'height':'50px',
+					'border-radius':'25px'
+				}
+				
+				$('.spe').animate(pas,1000,function(){
+					$(this).css('background','blue');
+					$(this).animate({'margin-left':'100px'},2000);
+				})
+				/*if($('.spe:visible').length<0){
+					$('.spe').show(10000)
+				}else{
+					$('.spe').hide('speed')
+				}*/
+				
+				/*if($('.spe:visible').length<0){
+					$('.spe').fadeIn(2000)
+				}else{
+					$('.spe').fadeOut(2000)
+				}*/
+				//$('.spe').fadeTo(2000, 0.5)
+				//$('.spe').toggle('speed')
+				//$('.spe').fadeOut(5000)
+				
+			})
+		</script>
+	</body>
+</html>

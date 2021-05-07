@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul li{
+				list-style: none;
+			}
+			.tab {
+				width: 505px;
+				margin: 20px auto;
+			}
+			.tab ul li{
+				float:left ;
+				width:100px;
+				height: 30px;
+				line-height: 30px;
+				background-color: #333;
+				color: #ccc;
+				margin-right: 1px;
+				text-align: center;
+				cursor: pointer;
+			}
+			
+			.tab2 ul li{
+				background-color: red;
+				color: #fff;
+			}
+			.clear{
+				clear: both;
+			}
+			.tab ul li.on{
+				background-color: #aaa;
+			}
+			.tab2 ul li.on{
+				background-color: #555;
+			}
+			.tab .tab-con{
+				height: 200px;
+				overflow: hidden;
+				border: 1px solid #555;
+				width: 503px;
+				
+			}
+			.tab2 .tab-con{
+				border: 1px solid #red;
+			}
+			.tab-con > div{
+				width: 503px;
+				height: 200px;
+			}
+		</style>
+	</head>
+		<div class="tab">
+			<ul>
+				<li class="on">item1</li>
+				<li>item2</li>
+				<li>item3</li>
+				<li>item4</li>
+				<li>item5</li>
+			</ul>
+			
+			<div class="tab-con">
+				<div>content1</div>
+				<div>content2</div>
+				<div>content3</div>
+				<div>content4</div>
+				<div>content5</div>
+				
+			</div>
+			
+		</div>
+		
+		
+		<p>...............................................我是华丽的分割线................................................................</p>
+		<div class="tab tab2 mover">
+			<ul>
+				<li class="on">item1</li>
+				<li>item2</li>
+				<li>item3</li>
+				<li>item4</li>
+				<li>item5</li>
+			</ul>
+			
+			<div class="tab-con">
+				<div>content1</div>
+				<div>content2</div>
+				<div>content3</div>
+				<div>content4</div>
+				<div>content5</div>
+				
+			</div>
+			
+		</div>
+		<script src = '../lib/jquery-3.1.1.js'></script>
+		<script>
+			!function(window,document,undefined){
+				function randerTabByClsname(className){
+					var $target = $(className);
+					
+					$target.each(function(i,obj){
+						var $obj = $(obj),
+							$lis = $obj.find('ul>li'),
+							$divs = $obj.find('div>div'),
+							evt,
+							isMouseover = false,
+							timer;
+							if($obj.hasClass('mover')){
+								evt = 'mouseover';
+								isMouseover = true;
+							}else{
+								evt = 'click';
+							}
+						 $lis.on(evt,function(){
+			            	var $this = $(this)
+			            		index = $this.index();
+			            	if(isMouseover){
+			            		timer = setTimeout(function(){
+			            			doChanges()
+			            			/*$this.addClass('on').siblings('.on').removeClass('on');
+			            			$divs.eq(index).show().siblings().hide();*/
+			            		},300);
+			            		$lis.on('mouseout',function(){
+			            			if(timer){
+			            				clearTimeout(timer)
+			            			}
+			            		})
+			            	}else{
+			            		doChanges();
+			            		/*$this.addClass('on').siblings('.on').removeClass('on');
+			            		$divs.eq(index).show().siblings().hide();*/
+			            	}
+			            	
+			            	function doChanges(){
+			            		$this.addClass('on').siblings('.on').removeClass('on');
+			            		$divs.eq(index).show().siblings().hide();
+			            	}
+			            })
+						
+					})
+
+					
+					
+					/*var $tab = $('.tab'),
+					$lis = $tab.find('ul>li');
+					$divs = $tab.find('div>div')
+					
+	            $lis.on('click',function(){
+	            	var $this = $(this)
+	            		index = $this.index();
+	            	$this.addClass('on').siblings('.on').removeClass('on');
+	            	$divs.eq(index).show().siblings().hide();
+	            })*/
+				}
+				randerTabByClsname('.tab')
+				randerTabByClsname('.tab2')
+	            
+			}
+			(window,document);
+		</script>
+	<body>
+	</body>
+</html>

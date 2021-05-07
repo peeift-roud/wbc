@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>金字塔</title>
+		<style>
+			span{
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<span id="jin1"></span><span id="jin2"></span>
+		
+		<script>
+			var jin1 = document.getElementById('jin1');
+			var jin2 = document.getElementById('jin2');
+			
+			var str = '';
+			for(i=1;i<=6;i++){
+				
+				for(k=1;k<=(6-i);k++){
+					str+='&nbsp'
+				}
+				
+				for(j=1;j<=i;j++){
+					str+='* '
+				}				
+				str+='</br>';	
+			}
+			jin1.innerHTML = str;
+			
+			
+			var str2 = '';
+			for(i=1;i<=6;i++){
+				for(j=1;j<=i-1;j++){
+					str2+='* '
+				}				
+				str2+='</br>';	
+			}
+			jin2.innerHTML = str2;
+			
+
+		</script>
+		
+		
+	</body>
+</html>

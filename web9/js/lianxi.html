@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>练习</title>
+		
+	</head>
+	<body>
+		
+		<div id="myDiv"></div>
+		
+		<!--<span id="mySpan">我是span</span>
+		
+		<p>我是p</p>
+			<input type="text" name="ueser"  />
+			<input type="password" name="ueser"  />
+			<input type="button" id="btn" value="按钮" />	
+		
+		
+		<div class="myDiv">我是div</div>
+		<div id="mDiv">
+			<i id="myI">我是一个I</i>
+		</div>
+		-->
+		<!--<div id="myDiv">
+			<p id="myP">2222</p>
+		</div>
+		-->
+		<!--<div id="myDiv">
+			<span id="mySpan">1111</span>
+			<p id="myP">2222</p>
+			<i id="myI">3333</i>
+			
+		</div>-->
+		<!--<div id="clock">00:00:00:</div>-->
+		
+		<!--<div id="myDiv">
+			
+			
+			<p id="myP">我是一个段落</p>
+			<input type="button" id="btn1"value="添加" />
+			
+			
+		</div>
+		
+		<ul id="list">
+			<li id="newlist">我是一个li</li>
+		<button id="btn">加</button>
+		</ul>-->
+		
+		
+		<script >
+		var a =0, b=5, c=10;
+			c = b++;
+			a = ++b;
+			c = a+b;
+			console.log(c++);
+			
+		/*var i = 1,timer ;
+		timer=setInterval(function(){
+			if(i>=10){
+				clearInterval(timer);
+			}
+			console.log(i)
+			i++;
+		},1000)*/
+		
+		
+/*
+		var obj = {
+			a:1,
+			b:2,
+			c:3
+		}
+
+			for(var s in obj)
+			console.log(obj[s]);
+			*/
+			
+		/*var a = ['d',2,'s']
+		
+		for(var o in a ){
+			console.log(a[2]);
+		}*/
+		//数组排序和数组去重
+		/*var a = [1,5,3,8,4,8,2];
+			console.log(a.sort(function(a, b){
+				return a-b;
+			}));*/
+			
+			
+			/*var arr = [2,2,5,6,8,44,22,52,8,1];
+			var arr = arr.sort(function(a,b){
+				return a-b;
+			});
+			
+			var newArr = [];
+			newArr.push(arr[0])
+			for(i=1;i<arr.length;i++){
+				if(newArr[newArr.length-1]!=arr[i]){
+					newArr.push(arr[i])
+				}
+			}
+			console.log(newArr)*/
+			
+				
+			
+			
+//			function sayello (name,message){
+//				alert('hello' + ',' +name + ',' + message)
+//			}
+//			sayello('wangcai','how are you');
+		
+			
+//			function sum(a ,b){
+//				return a + b;
+//			}
+//			var s = sum(hello , world);
+//			console.log(s);
+			/*var arr = [];
+			var user = {
+				name:'wangcai'
+			}
+			arr.push('<h1>')
+			arr.push('你好')
+			arr.push('</h1>');
+			document.body.innerHTML += arr.join('');*/
+			
+//			var arr = "张三-李四-王二-麻子".split('-');
+//			var arr = "张三-李四-王二-麻子".split('-').join('|');
+			
+			
+			
+				
+				
+			/*var list = document.getElementById('list');
+			//var newlist = document.getElementById('newlist');
+			var btn =document.getElementById('btn');
+			btn.onclick = function(){
+				var newli = document.createElement('li');
+				for(i=0;i<list.children.length;i++){
+					var t = document.createTextNode('我是一个I'+i);
+				}
+				
+				newli.appendChild(t);
+				list.insertBefore(newli,list.children[0]);
+			}
+			
+			
+			
+			var btn1 = document.getElementById('btn1');
+			
+			btn1.onclick = function(){
+				var myP = document.getElementById('myP');
+				var myDiv = document.getElementById('myDiv')
+				var mySpan = document.createElement('span');
+				for(i=0; i<myDiv.children.length; i++){
+					var txt = document.createTextNode('我是一个span'+i);
+				}
+				mySpan.appendChild(txt);
+				myDiv.insertBefore(mySpan,myP);
+				myDiv.insertBefore(mySpan,myDiv.children[0]);
+				
+			}
+			*/
+			
+			
+			
+			/*var mySpan = document.createElement('span');
+				
+				
+				mySpan.setAttribute('name','mySpan')
+				var mySpan = document.getElementsByName('mySpan');
+				for(i=0;i<mySpan.children.lenght;i++){
+					
+					mySpan.appendChild(txt);
+				}
+				
+				//myDiv.insertBefore(mySpan,myP)
+				myDiv.insertBefore(mySpan,mySpan[0])*/
+			
+			
+			
+			
+			
+			/*var btn1 = document.getElementById('btn1');
+			btn1.onclick = function(){
+				var t = btn1.value;
+				if(t == '添加'){
+					alert('添加');
+					btn1.value='删除';
+					var myDiv = document.getElementById('myDiv')
+					var mySpan = document.createElement('span');
+					var txt = document.createTextNode('我是一个span');
+					mySpan.appendChild(txt);
+					myDiv.appendChild(mySpan)
+					mySpan.setAttribute('id','mySpan')
+				}else{
+					alert('删除')
+					btn1.value='添加';
+					var myDiv = document.getElementById('myDiv');
+					var mySpan = document.getElementById('mySpan')
+					myDiv.removeChild(mySpan);
+				};
+			};*/
+		
+		
+		
+			/*var btn1 = document.getElementById('btn1');
+			var btn2 =document.getElementById('btn2');
+			btn1.onclick = function(){
+				//alert(11111111);
+				var myDiv = document.getElementById('myDiv')
+				var mySpan = document.createElement('span');
+				var txt = document.createTextNode('我是一个span');
+				mySpan.appendChild(txt);
+				myDiv.appendChild(mySpan)
+				mySpan.setAttribute('id','mySpan')
+				
+				
+			}
+			btn2.onclick = function(){
+				var myDiv = document.getElementById('myDiv');
+				var mySpan = document.getElementById('mySpan')
+				myDiv.removeChild(mySpan);
+			}*/
+			
+			/*var myDiv = document.getElementById('myDiv');
+			var myI = document.getElementById('myI');
+			var myP = document.getElementById('myP');
+			var btn = document.getElementById('btn');
+			var btn2 = document.getElementById('btn2');*/
+
+//			btn.onclick =function(){
+//				/*var mySpan = document.createElement('mySpan');
+//				var txt = document.createTextNode('我是一个span');
+//				mySpan.appendChild(txt);
+//				myDiv.appendChild(mySpan)*/;
+//				
+//				//myDiv.removeChild(myI);
+//				myI.parentNode.removeChild(myI);
+//				/*var mySpan = document.createElement('mySpan');
+//				var txt = document.createTextNode('我是一个span');
+//				mySpan.appendChild(txt);
+//				myDiv.insertBefore(mySpan,myP);
+//				*/
+//				
+//				
+//			}
+		
+		                                                         
+
+			            
+			/*var mySpan = document.getElementById('mySpan');
+			mySpan.style.color='red';
+			mySpan.style.display='block';
+			mySpan.style.width='200px';
+			mySpan.style.height='80px';
+			mySpan.style.fontSize='30px';
+			mySpan.style.backgroundColor='blue';
+			
+			
+			console.log(mySpan.innerHTML);
+			
+			var p = document.getElementsByTagName('p');
+			console.log(p[0].innerHTML);
+			
+			var btn = document.getElementById('btn');
+			var ueser = document.getElementsByName('ueser');
+			btn.onclick = function(){
+				for(i=0;i<ueser.length;i++){
+					console.log(ueser[i].value)
+				}	
+				
+			}
+			
+			var myDiv = document.getElementsByClassName('myDiv');
+			
+			
+			console.log(myDiv[0].innerHTML);
+			
+			var mDiv = document.getElementById('mDiv');
+			var myI = document.getElementById('myI');
+			var span = document.createElement('span');
+			var text = document.createTextNode('我是一个span')
+			span.appendChild(text);
+			mDiv.appendChild(span);
+			mDiv.removeChild(myI);
+			var h1 = document.createElement('h1');
+			var text =document.createTextNode('我是一个h1');
+			h1.appendChild(text);
+			mDiv.insertBefore(h1,span);*/
+			//mDiv.replaceChild(h1,span)
+				
+			
+//			var myDiv = document.getElementById('myDiv');
+//			var myP = document.getElementById('myP');
+//			var mySpan = document.createElement('mySpan');
+//			var test = document.createTextNode('44444444');
+//			mySpan.appendChild(test);
+//			myDiv.appendChild(mySpan);
+//			myDiv.removeChild(myP);
+//			
+			
+//			var myDiv = document.getElementById('myDiv');
+//			var mySpan = document.getElementById('mySpan');
+//			var myP = document.getElementById('myP');
+//			var myI =document.getElementById('myI');
+			
+			
+		</script>
+	</body>
+</html>

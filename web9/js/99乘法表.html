@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>99乘法表</title>
+	</head>
+	<body>
+		<table id="wp" border="1">
+			
+		</table>
+			 
+		
+		<script>
+			var wp = document.getElementById('wp');
+			var list  = '';
+			for(i=1;i<=9;i++){
+				list += '<tr>';
+				for(j=1;j<=i;j++){
+					list+='<td>' + i + ' &times ' + j + ' = ' + (i*j) + '</td>';
+				}
+				list += '<tr>';
+			}
+			wp.innerHTML = list;
+		</script>
+	</body>
+</html>

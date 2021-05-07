@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<select id="sel">
+			<option value="">请选择</option>
+		</select>
+		<button id="btn">点击生成</button>
+		
+		<script>
+		
+			var drop_down  = function(){
+				var btn = document.getElementById('btn');
+				var arr = ['请选择','上海','北京','广州','天津','安徽']
+				var sel = document.getElementById('sel');
+				btn.onclick = function(){
+					sel.innerHTML = '<option>' + arr.join('</option><option>') + '</option>' 
+					console.log(sel.innerHTML);
+				}
+			}
+			drop_down();
+			
+			var a = 'wrrggth';
+			
+			
+			
+			
+			
+			
+			
+//			var btn = document.getElementById('btn');
+//			var arr = ['请选择','上海','北京','广州','天津','安徽']
+//			var sel = document.getElementById('sel');
+//			
+//			var len = arr.length;
+//			var opt = [];
+//			btn.onclick = function(){
+//				
+//				for(i=0; i<len;i++){
+//					opt.push('<option>',arr[i],'</option>')	
+//				}
+//				sel.innerHTML += opt.join('');
+//				//console.log(sel.innerHTML );
+//				}
+			
+			
+		</script>
+	</body>
+</html>

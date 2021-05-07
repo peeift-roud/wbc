@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="clock">00:00:00</div>
+		<button id="btn">开始</button>
+		<script type="text/javascript">
+			
+			var clock = document.getElementById('clock');
+			var btn = document.getElementById('btn');
+			var date = new Date(),
+					hou = date.getHours(),
+					min = date.getMinutes(),
+					sec = date.getSeconds(),
+					clock = document.getElementById('clock');
+			btn.onclick = function(){
+				
+					//clock.innerHTML = fill0(hou) + ':' + fill0(min) + ':' + fill0(sec);
+					var timer = function(){
+						hou = date.getHours();
+						min = date.getMinutes();
+						sec = date.getSeconds();		
+						clock.innerHTML = fill0(hou) + ':' + fill0(min) + ':' + fill0(sec);
+						date.setSeconds(++sec);
+						}
+					timer();
+					setInterval(timer,1000);
+					
+				};
+				
+				var fill0 = function(num){
+						/*if(num<10){
+							return '0' + num;
+						}return num;
+				*/
+					return num<10? '0'+num:num;
+			}
+			
+		</script>
+	</body>
+</html>

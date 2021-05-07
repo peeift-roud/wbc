@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>手风琴</title>
+		<style>
+			body{
+				background-color: #333;
+			}
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul li{
+				list-style: none;
+			}
+			.nav{
+				background-color: #CCCCCC;
+				width: 360px;
+				margin: 0 auto;
+			}
+			
+			.nav h1{
+				border-bottom: 1px solid #333;
+				font-size: 20px;
+				height: 40px;
+				line-height: 40px;
+				cursor: pointer;
+			}
+			.nav h1:active{
+				color:#EEEEEE;
+			}
+			.nav ul{
+				background-color: #aaa;
+				display: none;
+			}	
+			
+			.nav ul li{
+				width: 360px;
+				height: 35px;
+				line-height: 35px;
+				border-bottom: 1px solid #bbb;
+				
+				
+			}
+				
+			.nav ul li:hover{
+				background-color: #555;
+				color:#eee;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="nav">
+			<div class="nav-wp">
+				<h1>HTML5教程</h1>
+				<ul>
+					<li>课程1</li>
+					<li>课程2</li>
+					<li>课程3</li>
+					<li>课程4</li>
+					<li>课程5</li>
+				</ul>				
+			</div>
+			<div class="nav-wp">
+				<h1>CSS教程</h1>
+				<ul>
+					<li>课程1</li>
+					<li>课程2</li>
+					<li>课程3</li>
+					<li>课程4</li>
+					<li>课程5</li>
+				</ul>					
+			</div>
+			<div class="nav-wp">
+				<h1>JS教程</h1>
+				<ul>
+					<li>课程1</li>
+					<li>课程2</li>
+					<li>课程3</li>
+					<li>课程4</li>
+					<li>课程5</li>
+				</ul>	
+			</div>
+			<div class="nav-wp">
+				<h1>JQ教程</h1>
+				<ul>
+					<li>课程1</li>
+					<li>课程2</li>
+					<li>课程3</li>
+					<li>课程4</li>
+					<li>课程5</li>
+				</ul>
+					
+			</div>
+			<div class="nav-wp">
+				<h1>Ajax教程</h1>
+				<ul>
+					<li>课程1</li>
+					<li>课程2</li>
+					<li>课程3</li>
+					<li>课程4</li>
+					<li>课程5</li>
+				</ul>					
+			</div>
+			<div class="nav-wp">
+				<h1>anuglar教程</h1>
+				<ul>
+					<li>课程1</li>
+					<li>课程2</li>
+					<li>课程3</li>
+					<li>课程4</li>
+					<li>课程5</li>
+				</ul>					
+			</div>
+		</div>
+		
+		
+		
+		<script src="../lib/jquery-3.1.1.js"></script>
+		<script>
+			!function (window,document,undefined){
+				var $nav = $('.nav'),
+					$h1 = $nav.find('h1');
+				$h1.on('click',function(){
+					var $this = $(this),
+						$ul = $this.siblings('ul');
+						/*console.log($ul)*/
+					$ul.slideToggle();
+				
+					$this.parent().siblings().find('ul').hide();
+					
+					
+				})
+			}
+			(window,document);
+		</script>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</body>
+</html>

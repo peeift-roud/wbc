@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>生成下拉菜单</title>
+	</head>
+	<body>
+		<select id="wp">
+			<option value="请选择">请选择</option>
+		</select>
+		<button id="btn">点击生成</button>
+		<script>
+			var btn = document.getElementById('btn');
+			var arr = ['请选择','北京','上海','天津','广东','河北','安徽'],
+				newArr = [],
+				len = arr.length;
+			
+				for(i=0;i<len;i++){
+					newArr += '<option>' + arr[i] + '</option>'
+				}
+				
+				btn.onclick = function(){
+					wp.innerHTML = newArr;
+				}
+			
+				
+			
+			
+		</script>
+	</body>
+</html>
