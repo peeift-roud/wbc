@@ -1,0 +1,197 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-size: 12px;
+	height: 1000px;
+}
+
+ul li{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+.nav-bar{
+	background-color: #383838;
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	width: 35px;
+}
+
+ .nav-bar .main{
+	position:relative;
+	top:332px;
+
+}
+.main>div{
+	width: 35px;
+	height: 30px;
+	margin-top: 7px;
+	
+}
+
+.main>div span{
+	position: absolute;
+	width: 47px; 
+	height:30px;
+	line-height: 30px;
+	text-align: center;
+	left: 0px;
+	background-color: #383838;
+	color: #FFAA01;
+	z-index: 0;
+	display: inline-block;
+}
+
+.main>div:hover span{
+	color: #383838;
+	background-color: #ffaa01;
+}
+
+.main .zindex{
+	position: relative;
+	z-index: 2;
+	background-color: #383838;
+}
+.icon{
+	background-image: url(../img/icon.png);
+    width: 35px;
+    height: 30px;
+	display: inline-block;
+}
+
+.icon.news{
+	background-position: 0px -23px;	
+	
+}
+.main>div:hover .icon.news{
+	background-position: -26px -23px;	
+	background-color: #ffaa01;
+}
+
+.icon.money{
+    background-position: 0px -47px;
+}
+.main>div:hover .icon.money{
+	background-position: -26px -47px;
+	background-color: #ffaa01;
+}
+	
+.icon.footprint{
+	background-position: 0px -70px;
+}
+.main>div:hover .icon.footprint{
+	background-position: -26px -70px;
+	background-color: #ffaa01;
+}
+
+.icon.sign-in{
+	background-position: 0px -93px;	
+}
+.main>div:hover .icon.sign-in{
+	background-position: -26px -93px;
+	background-color: #ffaa01;
+}
+
+/*///////////////////////////////////////////////////////////////////*/
+
+ .nav-bar .main2{
+	position:relative;
+	top:375px;
+
+}
+
+.icon.online{
+	background-position: 0px -117px;	
+}
+
+.icon.online:hover{
+	background-color: #FFAA01;
+	background-position: -26px -117px;	
+}
+
+.icon.opinion{
+	background-position: 0px -140px;	
+}
+.icon.we-chat:hover{
+	background-color: #FFAA01;
+	background-position: -26px -140px;	
+}
+
+
+
+.icon.we-chat{
+	background-position: 0px -164px;	
+}
+
+.icon.we-chat:hover{
+	background-position: -26px -164px;	
+	background-color: #FFAA01;
+}
+
+
+.icon.return-top{
+	background-position: 0px -187px;	
+}
+
+.icon.return-top:hover{
+	background-position: -26px -187px;	
+	background-color: #FFAA01;
+}
+
+.main2 .zindex{
+	position: relative;
+	z-index: 2;
+	background-color: #383838;
+}
+.main2>li span{
+	position: absolute;
+	width: 70px; 
+	height:30px;
+	line-height: 30px;
+	text-align: center;
+	left: 0px;
+	background-color: #383838;
+	color: #FFAA01;
+	z-index: 0;
+	display: inline-block;
+}
+
+.main2>li:hover span{
+	color: #383838;
+	background-color: #ffaa01;
+}
+
+.main2>li img{
+	position: absolute;
+	display: none;
+	left:35px;
+}
+
+.main2>li:hover img{
+	position: absolute;
+    left: -160px;
+    top: -140px;
+    display: block;
+    width: 160px;
+	height: 240px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
