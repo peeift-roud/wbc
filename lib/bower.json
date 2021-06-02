@@ -1,0 +1,22 @@
+{
+  "name": "lib",
+  "authors": [
+    "HuanTingTing <htthhhhcf125@sina.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "1.12.4",
+    "underscore": "^1.8.3"
+  }
+}

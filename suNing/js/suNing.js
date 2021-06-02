@@ -22,9 +22,13 @@
 		$this.siblings().animate({'left':'0px'},'200')
 	});
 	
-	$navBar.find('.main2 img').on('mouseover',function(){
-		var $this = $(this),
-		$this.animate('left':'-160px','200')		
+	$navBar.find('.main2 b').on('mouseover',function(){
+		var $pic = $('.pic');
+		$pic.show().animate({'left':'-160px'},'200')
+			
+	}).on('mouseout',function(){
+		var $pic = $('.pic');
+		$pic.show().animate({'left':'35px'},'200')
 	})
 	
 }

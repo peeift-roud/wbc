@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				height: 3000px;
+			}
+			ul li{
+				list-style: none;
+			}
+			
+			.main{
+				background-image: url(img/rocket.png);
+				right:10px;
+				bottom: 0px;
+				width: 149px;
+				height: 250px;
+				position: fixed;	
+			}
+			.main:hover{
+				background-position:-149px 0;
+			}
+			.fly{
+				background-image: url(img/rocketFly.gif);
+				right:10px;
+				bottom: 0px;
+				width: 149px;
+				height: 250px;
+				position: fixed;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>items1</li>
+			<li>items2</li>
+			<li>items3</li>
+			<li>items4</li>
+			<li>items5</li>
+			<li>items6</li>
+			<li>items7</li>
+			<li>items8</li>
+			<li>items9</li>
+			<li>items10</li>
+			<li>items11</li>
+			<li>items12</li>
+			<li>items13</li>
+			<li>items14</li>
+			<li>items15</li>
+			<li>items16</li>
+			<li>items17</li>
+			<li>items18</li>
+			<li>items19</li>
+			<li>items20</li>
+			<li>items21</li>
+			<li>items22</li>
+			<li>items23</li>
+			<li>items24</li>
+			<li>items25</li>
+			<li>items26</li>
+			<li>items27</li>
+			<li>items28</li>
+			<li>items29</li>
+			<li>items30</li>
+			<li>items31</li>
+			<li>items32</li>
+			<li>items33</li>
+			<li>items34</li>
+			<li>items35</li>
+			<li>items36</li>
+			<li>items37</li>
+			<li>items38</li>
+			<li>items39</li>
+			<li>items40</li>
+			<li>items41</li>
+			<li>items42</li>
+			<li>items43</li>
+			<li>items44</li>
+			<li>items45</li>
+			<li>items46</li>
+			<li>items47</li>
+			<li>items48</li>
+			<li>items49</li>
+			<li>items50</li>
+		</ul>
+		<div class="main">
+			<div class="fly"></div>
+		</div>
+		<script src = "../lib/jquery-3.1.1.js"></script>
+		<script>
+			!function (window,document,$,undefined){
+				var $main = $('.main'),
+					$fly = $('.fly');
+				$(window).on('scroll',function(){
+					var $this = $(this);
+					
+					st = $this.scrollTop(),
+					height = $this.height();
+					
+					if(st>height){
+						$main.show();
+					}else{
+						$main.hide();
+					}
+					//console.log(st + '-' + height);
+				});
+				
+				$main.on('click',function(){
+					$fly.show();
+//		            $('body,html').animate({scorllTOP:0},600);
+		            $("html, body").animate({scrollTop: 0}, 600);
+		            $main.delay(200).animate({top: '-1000px'}, 600, function() {
+					$main.css({bottom: '0px', top: 'auto'});
+					$fly.hide();
+				});
+				})
+				
+				
+			}
+			(window,document,jQuery);
+		</script>
+	</body>
+</html>
