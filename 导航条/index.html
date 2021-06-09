@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul li{
+				list-style: none;
+			}
+			
+			.nav{
+				background-color: #000000;
+				width:1000px;
+				height: 40px;
+				margin: 30px auto;
+				position: relative;
+			}
+			
+			.nav ul li{
+				float: left;
+				padding: 0 20px;
+				height: 40px;
+				line-height: 40px;
+				color:#fff;
+			}
+			
+			.nav ul li.on{
+				color:red;
+				
+			}
+			
+			.nav ul li:hover{
+				color:red;
+			}
+			
+			.bline{
+				width: 120px;
+				height: 5px;
+				background-color: red;
+				position: absolute;
+				bottom:0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="nav">
+			<ul>
+				<li class="on">Javascript</li>
+				<li>PHP</li>
+				<li>C#</li>
+				<li>Java</li>
+				<li>bootstrap</li>
+				<li>CSS</li>
+			</ul>
+			<div class="bline"></div>
+		</div>
+		<script src = "../lib/jquery-3.1.1.js"></script>
+		<script>
+
+			/*!function(window,document,$,undefined){
+				"use script"
+				var $bline = $('.bline');
+				$('.nav li').on('mouseover',function(){
+				//$('.nav li').on('click',function(){
+					var $this = $(this),
+						w = $this.outerWidth(),
+						pos = $this.position();						
+					$this.addClass('on').siblings('.on').removeClass('on')
+					$bline.width(w).animate({left:pos.left},100);
+					//$bline.width(w).css({left:pos.left});
+				})
+			}(window,document,jQuery);*/
+			
+			
+			!function(window,document,$,undefined){
+				"use script"
+				var $bline = $('.bline');
+				$('.nav li').on('mouseover',function(){
+					var $this = $(this),
+						w = $this.outerWidth(),
+						pos = $this.position();
+					$bline.width(w).animate({left:pos.left},100);
+					$this.addClass('on').siblings('.on').removeClass('on');					
+				
+				})	
+			}(window,document,jQuery);
+			
+			
+		</script>
+	</body>
+</html>

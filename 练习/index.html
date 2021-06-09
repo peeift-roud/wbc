@@ -4,79 +4,157 @@
 		<meta charset="utf-8" />
 		<title></title>
 		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
 			
+			ul li{
+				list-style: none;
+			}
+			.wp{
+				width:500px;
+				height: 300px;
+				/*border: 1px solid red;*/
+				margin: 20px auto;
+				
+			}
+			.wp .L{
+				width: 100px;
+				height: 200px;
+				border: 1px solid #0000FF;
+				float: left;
+				overflow:auto; 
+			}			
+			.wp .R{
+				
+				width: 100px;
+				height: 200px;
+				border: 1px solid #0000FF;
+				float: right;
+				overflow:auto; 
+			}					
+			.wp  ul li{
+				position: relative;
+				left: 30px;
+				margin-top: 10px;
+				height: 20px;
+				line-height: 20px;
+				width:40px;
+				border: 1px solid #3C3C3C;
+				border-radius: 3px;
+				background-color:#C8E5BC ;
+				cursor: pointer;
+			}			
+			.wp  ul li.on {
+				background-color: #0000FF;
+				color:#fff;
+			}
+			.btn button{
+				width: 50px;
+				margin-top: 20px ;
+				margin-left: 120px;	
+				cursor: pointer;			
+			}			
 		</style>
 	</head>
-	<body>
-		<button class="btn up">上移</button>
-		<button class="btn down">下移</button>
-		<hr />
-		<table border = '1' id = "tab">
-			<tr>
-				<td><input type="checkbox" /></td>
-				<td>items1</td>
-				<td>items2</td>
-				<td>items3</td>
-				<td>items4</td>
-				<td>items5</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" /></td>
-				<td>items1</td>
-				<td>items2</td>
-				<td>items3</td>
-				<td>items4</td>
-				<td>items5</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" /></td>
-				<td>items1</td>
-				<td>items2</td>
-				<td>items3</td>
-				<td>items4</td>
-				<td>items5</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" /></td>
-				<td>items1</td>
-				<td>items2</td>
-				<td>items3</td>
-				<td>items4</td>
-				<td>items5</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" /></td>
-				<td>items1</td>
-				<td>items2</td>
-				<td>items3</td>
-				<td>items4</td>
-				<td>items5</td>
-			</tr>
-		</table>
-		
-		<script src = "../lib/jquery-3.1.1.js"></script>
-		<script>
-			!function(window,document,$,undefined){
+	<body>		
+		<div class="wp">
+			<div class="L">
+				<ul>
+					<li >11111</li>
+					<li>22222</li>
+					<li>33333</li>
+					<li>44444</li>
+					<li>55555</li>					
+				</ul>
+			</div>
+			
+			<div class="R">
+				<ul>
+					<li>aaaa</li>
+					<li>bbbb</li>
+					<li>cccc</li>
+					<li>dddd</li>
+				</ul>
+			
+			</div>
+			
+			<div class="btn">
+				<button class="toRight">&gt;</button>
+				<br />
+				<button class="toLeft">&lt;</button>
+				<br />
+				<button class="toRinghtAll">&gt;&gt;</button>
+				<br />
+				<button class="toLeftAll">&lt;&lt;</button>
+			</div>
+			
+			
+		</div>
+	<script src = "../lib/jquery-3.1.1.js"></script>
+	<script>
+	!function(window,document,$,undefined){
+		"use script"
+		var $wp = $('.wp'),
+			$L = $wp.find('.L'),
+			$R = $wp.find('.R');
+			
+			$wp.find('li').on('click',function(){				
+				$this = $(this);
 				
-				var $btn = $('.btn');
-				
-	
-				$btn.on('click',function(){
-					var $this = $(this),
-						$target = $('#tab input[type="checkbox"]:checked');
-						if($target.length>1){
-							return;
-						}
-						
-					if($this.hasClass('up')){
-						$target.parents('tr').prev('tr').before($target.parents('tr'))
-					}else{
-						$target.parents('tr').next('tr').after($target.parents('tr'))
-					}
-				});
+				/*if($this.ctrlKey){
 					
-			}
-			(window,document,$);
-		</script>
+					$this.addClass('on');
+				}else{
+					$this.addClass('on').siblings('.on').removeClass('on');	
+				}*/
+				
+				 
+
+				$this.addClass('on').siblings('.on').removeClass('on');	
+			})			
+			$wp.find('button').on('click',function(){
+				var $this = $(this),
+					$leftVal = $L.find('.on'),
+					$rightVal = $R.find('.on');
+				if($this.hasClass('toRight')){
+					if($leftVal.length == 0){
+						alert('请选择选项');
+						return;						
+					};
+					$R.find('ul').append($leftVal).removeClass('on');
+					
+				}else if($this.hasClass('toLeft')){
+					if($rightVal.length == 0){
+						alert('请选择选项');
+						return;	
+					};
+					$L.find('ul').append($rightVal).removeClass('on');	
+					
+				}else if($this.hasClass('toRinghtAll')){		
+					$R.find('ul').append($L.find('li'))
+					
+				}else{
+					$L.find('ul').append($R.find('li'))
+				};
+			});
+			$wp.find('li').on('dblclick',function(){
+				$htis = $(this);
+				
+				if($this.parent().parent().attr('class') == 'R'){
+					$L.find('ul').append($this)
+				}else{
+					$R.find('ul').append($this)
+				}
+				
+				
+				
+			})
+	}(window,document,jQuery)
+					
+		
+		
+	</script>
 	</body>
 </html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul li a{
+				list-style: none;
+				text-decoration: none;
+			}
+			.img-sliter{
+				width: 520px;
+				height:280px;
+				background-color: red;
+				margin: 20px auto;
+				overflow: hidden;
+				position: relative;
+			}
+			.img-sliter ul{
+				width: 520px;
+				height:280px;
+			}
+			.img-sliter a{
+				margin: 0 10px;
+				position:absolute;
+				top:50%;
+				margin-top: -15px;
+				width: 30px;
+				height:50px;
+				background-color:#333;
+				opacity: 0.5;
+				display: none;
+			}
+			
+			.img-sliter a.next{
+				right:0;
+				left:auto
+			}
+			
+			.img-sliter:hover a{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="img-sliter">
+			<ul class="wp">
+				<li><img src="img/1.jpg" alt="" /></li>
+				<li><img src="img/2.jpg" alt="" /></li>
+				<li><img src="img/4.jpg" alt="" /></li>
+				<li><img src="img/5.jpg" alt="" /></li>
+			</ul>
+			<a href="#" class="prev"></a>
+			<a href="#" class="next"></a>
+		</div>
+		<script src = "../lib/jquery-3.1.1.js"></script>
+		<script>
+			!function(window,document,$,undefined){
+				 $('.img-sliter>a').on('click',function(){
+				 	var $this = $(this),
+				 		$ul = $('.wp');
+				 	if($this.hasClass('next')){
+				 		$ul.append($ul.find('li:first'))
+				 	}else{
+				 		$ul.prepend($ul.find('li:last'))
+				 	}
+				 });
+				
+			}(window,document,jQuery)
+		</script>
+	</body>
+</html>
